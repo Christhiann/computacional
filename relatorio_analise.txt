@@ -1,0 +1,15 @@
+RELATÓRIO DE ANÁLISE DE INTEGRIDADE DE IMAGEM
+==================================================
+
+Arquivo original: 027_O.png
+Arquivo forjado: 027_F.png
+Arquivo máscara real: 027_B.png
+
+Acurácia: 0.823
+IoU: 0.170
+
+Observações:
+- A máscara gerada foi obtida via segmentação K-means.
+- A acurácia pode estar inflada pelo grande número de pixels de fundo.
+- A IoU mede a sobreposição real entre adulteração prevista e real.
+
