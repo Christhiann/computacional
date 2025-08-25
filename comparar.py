@@ -3,9 +3,9 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 # === Arquivos ===
-orig_path = "CoMoFoD_small_v2/001_O.png"   # original
-forg_path = "CoMoFoD_small_v2/001_F.png"   # imagem manipulada
-mask_real_path = "CoMoFoD_small_v2/001_B.png"  # máscara real
+orig_path = "027_O.png"   # original
+forg_path = "CoMoFoD_small_v2/027_F.png"   # imagem manipulada
+mask_real_path = "CoMoFoD_small_v2/027_B.png"  # máscara real
 
 # === Carregar imagens ===
 orig = cv2.imread(orig_path)
@@ -55,3 +55,18 @@ for i in range(4):
 
 plt.tight_layout()
 plt.show()
+# === Gerar Relatório em TXT ===
+with open("relatorio_analise.txt", "w", encoding="utf-8") as f:
+    f.write("RELATÓRIO DE ANÁLISE DE INTEGRIDADE DE IMAGEM\n")
+    f.write("="*50 + "\n\n")
+    f.write(f"Arquivo original: {orig_path}\n")
+    f.write(f"Arquivo forjado: {forg_path}\n")
+    f.write(f"Arquivo máscara real: {mask_real_path}\n\n")
+    f.write(f"Acurácia: {accuracy:.3f}\n")
+    f.write(f"IoU: {iou:.3f}\n\n")
+    f.write("Observações:\n")
+    f.write("- A máscara gerada foi obtida via segmentação K-means.\n")
+    f.write("- A acurácia pode estar inflada pelo grande número de pixels de fundo.\n")
+    f.write("- A IoU mede a sobreposição real entre adulteração prevista e real.\n\n")
+
+print("✅ Relatório salvo em relatorio_analise.txt e imagem em comparacao_resultados.png")
