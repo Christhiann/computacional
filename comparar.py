@@ -4,8 +4,8 @@ import matplotlib.pyplot as plt
 
 # === Arquivos ===
 orig_path = "027_O.png"   # original
-forg_path = "CoMoFoD_small_v2/027_F.png"   # imagem manipulada
-mask_real_path = "CoMoFoD_small_v2/027_B.png"  # máscara real
+forg_path = "027_F.png"   # imagem manipulada
+mask_real_path = "027_B.png"  # máscara real
 
 # === Carregar imagens ===
 orig = cv2.imread(orig_path)
@@ -70,3 +70,4 @@ with open("relatorio_analise.txt", "w", encoding="utf-8") as f:
     f.write("- A IoU mede a sobreposição real entre adulteração prevista e real.\n\n")
 
 print("✅ Relatório salvo em relatorio_analise.txt e imagem em comparacao_resultados.png")
+
